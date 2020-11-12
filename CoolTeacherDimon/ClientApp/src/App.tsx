@@ -7,6 +7,7 @@ import FetchData from './components/FetchData';
 import Products from './components/products';
 
 import './custom.css'
+import 'antd/dist/antd.css';
 
 export default () => (
     <Layout>

@@ -1,11 +1,12 @@
+import { notification } from 'antd';
 import { Action, Reducer } from 'redux';
 import { AppThunkAction } from '../../store';
-import ProductsService from "./products-service";
+import ProductsService, { IProduct } from "./products-service";
 
 const productsService = new ProductsService();
 
-export interface ProductsState{
-    listProducts: any[];
+export interface ProductsState {
+    listProducts: IProduct[];
     isLoading: boolean;
     isFailed: boolean;
     isSucces: boolean;
@@ -17,7 +18,7 @@ export interface GetProductsStarted {
 
 export interface GetProductsSuccess {
     type: 'GET_PRODUCTS_SUCCESS';
-    listProducts: any[];
+    listProducts: IProduct[];
 }
 
 export interface GetProductsFailed {
@@ -27,16 +28,18 @@ export interface GetProductsFailed {
 type ProductsAction = GetProductsStarted | GetProductsSuccess | GetProductsFailed;
 
 export const actionCreators = {
-    getProducts: (): AppThunkAction<ProductsAction> => (dispatch, getState)=>{
-        
-        dispatch({type: "GET_PRODUCTS_STARTED"});
+    getProducts: (): AppThunkAction<ProductsAction> => (dispatch, getState) => {
+
+        dispatch({ type: "GET_PRODUCTS_STARTED" });
         productsService.getProducts()
-        .then(response=>{
-            dispatch({type: "GET_PRODUCTS_SUCCESS", listProducts: response.data});
-        })
-        .catch(response=>{
-            dispatch({type: "GET_PRODUCTS_FAILED"});
-        })        
+            .then(response => {
+                dispatch({ type: "GET_PRODUCTS_SUCCESS", listProducts: response.data });
+            })
+            .catch(error => {
+                dispatch({ type: "GET_PRODUCTS_FAILED" });
+                notification.error({message: error.response.data})
+                console.log(error.response.data);
+            })
     }
 }
 
