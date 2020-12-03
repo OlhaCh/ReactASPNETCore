@@ -14,7 +14,7 @@ namespace CoolTeacherDimon.Controllers
     {
         [HttpGet("get-all")]
         [ProducesResponseType(typeof(List<ProductModel>), StatusCodes.Status200OK)]
-        public ActionResult<List<ProductModel>> GetProducts()
+        public async Task<ActionResult<List<ProductModel>>> GetProducts()
         {
             try
             {

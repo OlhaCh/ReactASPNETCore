@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using DAL;
+using Microsoft.EntityFrameworkCore;
 
 namespace CoolTeacherDimon
 {
@@ -22,6 +24,9 @@ namespace CoolTeacherDimon
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            var options = new DbContextOptionsBuilder();
+            services.AddDbContext<DefaultDbContext>(options => options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
 
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>

@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoolTeacherDimon", "CoolTeacherDimon\CoolTeacherDimon.csproj", "{0DB0B076-7950-45F9-A9F6-CAAFF7D0163C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoolTeacherDimon", "CoolTeacherDimon\CoolTeacherDimon.csproj", "{0DB0B076-7950-45F9-A9F6-CAAFF7D0163C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{FCF17772-1D42-44DD-BF62-7778294ACE1B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTO", "DTO\DTO.csproj", "{BBCE10D6-7EDC-4983-9B0E-24310B26C66B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{0DB0B076-7950-45F9-A9F6-CAAFF7D0163C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0DB0B076-7950-45F9-A9F6-CAAFF7D0163C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0DB0B076-7950-45F9-A9F6-CAAFF7D0163C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCF17772-1D42-44DD-BF62-7778294ACE1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCF17772-1D42-44DD-BF62-7778294ACE1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCF17772-1D42-44DD-BF62-7778294ACE1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCF17772-1D42-44DD-BF62-7778294ACE1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBCE10D6-7EDC-4983-9B0E-24310B26C66B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBCE10D6-7EDC-4983-9B0E-24310B26C66B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBCE10D6-7EDC-4983-9B0E-24310B26C66B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBCE10D6-7EDC-4983-9B0E-24310B26C66B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
