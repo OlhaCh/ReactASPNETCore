@@ -1,4 +1,4 @@
-import axios from "axios"
+import axios, { AxiosRequestConfig } from "axios"
 
 //ToDo: add values for this 
 export interface IProduct {
@@ -7,8 +7,16 @@ export interface IProduct {
     price: number;
 }
 
-export default class ProductsService{
-    getProducts(){
-        return axios.get<IProduct[]>("api/product/get-all");
+const config: AxiosRequestConfig = {
+    headers: {
+        'Authorization': localStorage.getItem("JWT")
+    }
+}
+
+export default class ProductsService {
+
+    getProducts() {
+        console.log(config);
+        return axios.get<IProduct[]>("api/product/get-all", config);
     }
 }

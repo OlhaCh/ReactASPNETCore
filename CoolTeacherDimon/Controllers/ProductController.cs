@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CoolTeacherDimon.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,6 +13,7 @@ namespace CoolTeacherDimon.Controllers
     [ApiController]
     public class ProductController : ControllerBase
     {
+        [Authorize]
         [HttpGet("get-all")]
         [ProducesResponseType(typeof(List<ProductModel>), StatusCodes.Status200OK)]
         public async Task<ActionResult<List<ProductModel>>> GetProducts()
